@@ -3,15 +3,10 @@ description: 'Greet someone'
 runs:
   using: "composite"
   steps:
-    - name: Download Ecsact SDK
-      if: runner.os == 'Windows'
-      shell: pwsh
-      run: "gh -R ecsact-dev/ecsact_sdk release download -p '*.msix' -D ${{ github.action_path }}"
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
-
     - name: Install Ecsact SDK
       if: runner.os == 'Windows'
       shell: pwsh
-      run: "Import-Module Appx; Add-AppPackage -Path ((Get-ChildItem -Path ${{ github.action_path }} -Filter *.msix | Select-Object -first 1).name)"
+      run: "${{ github.action_path }}\\ecsact-install-windows.ps1"
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
 
