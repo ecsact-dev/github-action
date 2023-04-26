@@ -27,5 +27,6 @@ if (!(";$Path;".ToLower() -like "*;$BinDirectory;*".ToLower()))
 	Write-Output "Adding bin directory ($BinDirectory) to Environment path..."
 	[Environment]::SetEnvironmentVariable('Path', "$Path;$BinDirectory", $User)
 	$Env:Path += ";$BinDirectory"
+	Write-Output $BinDirectory > $Env:GITHUB_PATH
 }
 
