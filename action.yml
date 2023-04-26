@@ -8,7 +8,7 @@ runs:
       shell: pwsh
       run: "gh -R ecsact-dev/ecsact_sdk release download -p '*.msix' -D ${{ github.action_path }}"
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ github.token }}
 
     - name: Install Ecsact SDK
       if: runner.os == 'Windows'
