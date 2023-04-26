@@ -13,5 +13,5 @@ runs:
     - name: Install Ecsact SDK
       if: runner.os == 'Windows'
       shell: pwsh
-      run: "Add-AppPackage -Path ((Get-ChildItem -Path ${{ github.action_path }} -Filter *.msix | Select-Object -first 1).name)"
+      run: "Import-Module Appx; Add-AppPackage -Path ((Get-ChildItem -Path ${{ github.action_path }} -Filter *.msix | Select-Object -first 1).name)"
 
