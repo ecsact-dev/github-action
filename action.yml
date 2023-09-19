@@ -1,5 +1,5 @@
 name: 'Ecsact SDK'
-description: ''
+description: 'Install the Ecsact SDK on your runner machine. Making `ecsact` available in your PATH.'
 runs:
   using: composite
   steps:
