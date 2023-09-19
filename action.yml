@@ -12,6 +12,6 @@ runs:
     - name: Install Ecsact SDK
       if: runner.os == 'Linux'
       shell: bash
-      run: "${{ github.action_path }}\\ecsact-install-linux.bash"
+      run: "${{ github.action_path }}/ecsact-install-linux.bash"
       env:
         GH_TOKEN: ${{ github.token }}
