@@ -1,7 +1,3 @@
-pre_bump_hooks = [
-	"buildozer 'set version {{version}}' 'set compatibility_level {{version.major}}' //MODULE.bazel:%module",
-]
-
 post_bump_hooks = [
 	"git push",
 	"git push origin {{version}}",
