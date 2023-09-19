@@ -1,12 +1,17 @@
 name: 'Ecsact SDK'
-description: 'Greet someone'
+description: ''
 runs:
-  using: "composite"
+  using: composite
   steps:
     - name: Install Ecsact SDK
       if: runner.os == 'Windows'
       shell: pwsh
       run: "${{ github.action_path }}\\ecsact-install-windows.ps1"
       env:
-        GITHUB_TOKEN: ${{ github.token }}
-
+        GH_TOKEN: ${{ github.token }}
+    - name: Install Ecsact SDK
+      if: runner.os == 'Linux'
+      shell: pwsh
+      run: "${{ github.action_path }}\\ecsact-install-linux.ps1"
+      env:
+        GH_TOKEN: ${{ github.token }}
